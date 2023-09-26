@@ -1,32 +1,22 @@
-import React, {useState} from 'react';
-import styled from 'styled-components/native';
+import React, {useContext, useState} from 'react';
 import {GeolocationService} from '../Services/Getlocation.service';
 import {useLocation} from '../hooks/useLocation';
-
-const HeaderContainer = styled.View`
-  background-color: #4876ee;
-  height: 150px;
-  padding: 10px 0;
-  border-radius: 0px 0px 33px 33px;
-`;
-
-export const HeaderTitleContainer = styled.View`
-  align-items: center;
-`;
-
-const HeaderTitleText = styled.Text`
-  color: #fff;
-  font-size: 24px;
-  font-weight: bold;
-`;
-const HeaderText = styled.Text`
-  color: #fff;
-  font-size: 18px;
-`;
+import {SvgUri} from 'react-native-svg';
+import {
+  HeaderContainer,
+  HeaderText,
+  HeaderTitleContainer,
+  HeaderTitleText,
+  SearchContainer,
+  SearchInput,
+} from './Header.styles';
+import {AuthContext} from '../../context/AuthContext';
 
 export const Header = () => {
   const [localString, setLocalString] = useState<any>('');
-  useLocation();
+  const {searchText, setSearchText} = useContext(AuthContext);
+
+  useLocation(); // Hook destinado à permissões de Localização
   const locationService = new GeolocationService();
   locationService
     .getLocation()
@@ -37,12 +27,24 @@ export const Header = () => {
       console.error('Erro ao obter localização:', error);
     });
 
+  const handleSearchChange = (text: string) => {
+    setSearchText(text);
+  };
+
   return (
     <HeaderContainer>
       <HeaderTitleContainer>
         <HeaderTitleText>Localização Atual</HeaderTitleText>
         <HeaderText>{localString}</HeaderText>
       </HeaderTitleContainer>
+      <SearchContainer>
+        <SvgUri width="20" height="20" uri={require('../assets/search.svg')} />
+        <SearchInput
+          placeholder="Pesquisar..."
+          value={searchText}
+          onChangeText={handleSearchChange}
+        />
+      </SearchContainer>
     </HeaderContainer>
   );
 };

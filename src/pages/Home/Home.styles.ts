@@ -1,13 +1,17 @@
 import styled from 'styled-components/native';
 
-export const Container = styled.View`
+export const Wrapper = styled.View`
   flex: 1;
-  justify-content: center;
-  align-items: center;
   background-color: #fff;
+`;
+
+export const Container = styled.View`
+  margin-top: 20px;
+  background-color: #fff;
+  height: 100%;
 `;
 
 export const Title = styled.Text`
   font-size: 20px;
-  color: #fff;
+  color: #000;
 `;
