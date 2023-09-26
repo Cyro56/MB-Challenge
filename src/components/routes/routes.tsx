@@ -1,12 +1,14 @@
-import React from 'react';
+import React, {useContext} from 'react';
 import {Home} from '../../pages/Home/Home';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import {optionsHomeStyle} from './header.style';
 import {AuthScreen} from '../../pages/AuthScreen/AuthScreen';
+import {AuthContext} from '../../context/AuthContext';
+import {SignUpScreen} from '../../pages/SignUpScreen/SignUpScreen';
 
 export const Routes = () => {
+  const {isAuthenticated} = useContext(AuthContext);
   const Stack = createNativeStackNavigator();
-  const isAuthenticated = false;
 
   return (
     <Stack.Navigator>
@@ -23,7 +25,12 @@ export const Routes = () => {
           <Stack.Screen
             name="AuthScreen"
             component={AuthScreen}
-            options={optionsHomeStyle}
+            options={{headerShown: false}}
+          />
+          <Stack.Screen
+            name="SignUpScreen"
+            component={SignUpScreen}
+            options={{headerShown: false}}
           />
         </>
       )}
