@@ -10,7 +10,6 @@ export class AuthUser {
   }
 
   validateUser(email: string, password: string) {
-    console.log('validateUser', email, password);
     const MatchUser = this.users.find(
       user => user.email === email && user.password === password,
     );

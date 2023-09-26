@@ -25,7 +25,7 @@ import {NativeStackNavigationProp} from '@react-navigation/native-stack';
 
 export function AuthScreen() {
   const AuthUsers = new AuthUser();
-  const {setIsAuthenticated} = useContext(AuthContext);
+  const {setIsAuthenticated, setUserEmail} = useContext(AuthContext);
   const navigation = useNavigation<NativeStackNavigationProp<any>>();
   const handleLogin = async (values: {email: string; password: string}) => {
     const validate = AuthUsers.validateUser(values.email, values.password);
@@ -36,6 +36,8 @@ export function AuthScreen() {
         visibilityTime: 3000,
         text1: 'Verifique suas credenciais',
       });
+    } else {
+      setUserEmail(values.email);
     }
     setIsAuthenticated(validate);
   };

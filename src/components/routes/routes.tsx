@@ -17,7 +17,7 @@ export const Routes = () => {
           <Stack.Screen
             name="Home"
             component={Home}
-            options={optionsHomeStyle}
+            options={{headerShown: false}}
           />
         </>
       ) : (
