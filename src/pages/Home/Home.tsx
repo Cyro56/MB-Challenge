@@ -8,7 +8,7 @@ import {EventDBService} from '../../DataBases/EventDB.service';
 
 export const Home = () => {
   const eventDBService = EventDBService.getInstance();
-  const data = eventDBService.getEvents();
+  const data = eventDBService.getEvents()?.slice(0, 3);
 
   return (
     <Wrapper>

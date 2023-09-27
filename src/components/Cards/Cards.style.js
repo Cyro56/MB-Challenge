@@ -19,7 +19,7 @@ export const CardTitle = styled.Text`
 
 export const CardImage = styled.Image`
   width: 80%;
-  height: 60%; /* Altura da imagem */
+  height: 60%;
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
   background-color: red;
@@ -27,6 +27,7 @@ export const CardImage = styled.Image`
 
 export const CardInfo = styled.View`
   margin-top: 10px;
+  align-items: center;
 `;
 
 export const CardDescription = styled.Text`

@@ -19,7 +19,7 @@ const Footer = () => {
       <IconContainer onPress={() => handleNavigation('Home')}>
         <StyledImage source={require('../../components/assets/home.png')} />
       </IconContainer>
-      <IconContainer>
+      <IconContainer onPress={() => handleNavigation('CreateEvent')}>
         <StyledImage source={require('../../components/assets/plus.png')} />
       </IconContainer>
     </FooterContainer>

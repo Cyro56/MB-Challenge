@@ -6,6 +6,7 @@ import {AuthContext} from '../../context/AuthContext';
 import {SignUpScreen} from '../../pages/SignUpScreen/SignUpScreen';
 import {ExploreScreen} from '../../pages/Explore/Explore';
 import {Details} from '../../pages/Details/Details';
+import {CreateEvent} from '../../pages/CreateEvent/CreateEvent';
 
 export const Routes = () => {
   const {isAuthenticated} = useContext(AuthContext);
@@ -28,6 +29,11 @@ export const Routes = () => {
           <Stack.Screen
             name="Details"
             component={Details}
+            options={{headerShown: false}}
+          />
+          <Stack.Screen
+            name="CreateEvent"
+            component={CreateEvent}
             options={{headerShown: false}}
           />
         </>

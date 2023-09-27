@@ -11,6 +11,6 @@ export const ListBox = styled.View`
 `;
 
 export const ScrollViewStyled = styled.ScrollView`
-  scrollbar-width: none; /* Oculta a barra de rolagem no Android */
-  -ms-overflow-style: none; /* Oculta a barra de rolagem no IE/Edge */
+  scrollbar-width: none;
+  -ms-overflow-style: none;
 `;
