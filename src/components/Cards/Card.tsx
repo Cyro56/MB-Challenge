@@ -8,10 +8,17 @@ import {
 } from './Cards.style';
 import {IEventData} from '../../DataBases/types';
 import {FormatDate} from '../utils/formatDate';
+import {NativeStackNavigationProp} from '@react-navigation/native-stack';
+import {useNavigation} from '@react-navigation/native';
 
 export const Card = ({name, local, time, image}: IEventData) => {
+  const navigation = useNavigation<NativeStackNavigationProp<any>>();
+
+  const handleNavigation = () => {
+    navigation.navigate('Details', {name, time, image, local});
+  };
   return (
-    <CardContainer>
+    <CardContainer onPress={handleNavigation}>
       <CardImage
         source={{
           uri: image,

@@ -12,14 +12,15 @@ const Footer = () => {
   return (
     <FooterContainer>
       <IconContainer onPress={() => handleNavigation('Explore')}>
-        <StyledImage source={require('../../components/assets/explore.png')} />
+        <StyledImage
+          source={require('../../components/assets/direction.png')}
+        />
+      </IconContainer>
+      <IconContainer onPress={() => handleNavigation('Home')}>
+        <StyledImage source={require('../../components/assets/home.png')} />
       </IconContainer>
       <IconContainer>
         <StyledImage source={require('../../components/assets/plus.png')} />
-      </IconContainer>
-
-      <IconContainer>
-        <StyledImage source={require('../../components/assets/shopping.png')} />
       </IconContainer>
     </FooterContainer>
   );
