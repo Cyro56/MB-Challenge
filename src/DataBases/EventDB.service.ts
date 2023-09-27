@@ -27,7 +27,7 @@ export class EventDBService {
       },
       {
         id: 'asjka-dakdm-1940',
-        name: 'Blue Dreams',
+        name: 'Blue Dreams Hotel Club',
         local: 'Recife, Totó ',
         time: 1698246000000,
         image:

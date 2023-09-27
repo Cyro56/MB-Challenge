@@ -1,10 +1,10 @@
 import React, {useContext} from 'react';
 import {Home} from '../../pages/Home/Home';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
-import {optionsHomeStyle} from './header.style';
 import {AuthScreen} from '../../pages/AuthScreen/AuthScreen';
 import {AuthContext} from '../../context/AuthContext';
 import {SignUpScreen} from '../../pages/SignUpScreen/SignUpScreen';
+import {ExploreScreen} from '../../pages/Explore/Explore';
 
 export const Routes = () => {
   const {isAuthenticated} = useContext(AuthContext);
@@ -17,6 +17,11 @@ export const Routes = () => {
           <Stack.Screen
             name="Home"
             component={Home}
+            options={{headerShown: false}}
+          />
+          <Stack.Screen
+            name="Explore"
+            component={ExploreScreen}
             options={{headerShown: false}}
           />
         </>

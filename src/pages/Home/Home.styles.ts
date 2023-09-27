@@ -12,6 +12,7 @@ export const Container = styled.View`
 `;
 
 export const Title = styled.Text`
+  margin-left: 10px;
   font-size: 20px;
   color: #000;
 `;

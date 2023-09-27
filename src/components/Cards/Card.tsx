@@ -7,9 +7,9 @@ import {
   CardTitle,
 } from './Cards.style';
 import {IEventData} from '../../DataBases/types';
-import {Image} from 'react-native';
+import {FormatDate} from '../utils/formatDate';
 
-export const Card = ({id, name, local, time, image}: IEventData) => {
+export const Card = ({name, local, time, image}: IEventData) => {
   return (
     <CardContainer>
       <CardImage
@@ -20,7 +20,8 @@ export const Card = ({id, name, local, time, image}: IEventData) => {
 
       <CardInfo>
         <CardTitle>{name}</CardTitle>
-        <CardDescription>Descrição do Evento</CardDescription>
+        <CardDescription>{local}</CardDescription>
+        <CardDescription>{FormatDate(time)}</CardDescription>
       </CardInfo>
     </CardContainer>
   );

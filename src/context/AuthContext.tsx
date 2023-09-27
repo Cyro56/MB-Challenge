@@ -6,6 +6,8 @@ interface IAuth {
   setUserEmail: (params: string) => void;
   searchText: string;
   setSearchText: (params: string) => void;
+  location: string;
+  setLocation: (params: string) => void;
 }
 export const AuthContext = createContext<IAuth>({
   isAuthenticated: false,
@@ -14,12 +16,15 @@ export const AuthContext = createContext<IAuth>({
   setUserEmail: () => {},
   searchText: '',
   setSearchText: () => {},
+  location: '',
+  setLocation: () => {},
 });
 
 function AuthProvider({children}: {children: React.ReactNode}) {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
   const [userEmail, setUserEmail] = useState<string>('');
   const [searchText, setSearchText] = useState<string>('');
+  const [location, setLocation] = useState<string>('');
 
   const contextObjects = {
     isAuthenticated,
@@ -28,6 +33,8 @@ function AuthProvider({children}: {children: React.ReactNode}) {
     setUserEmail,
     searchText,
     setSearchText,
+    location,
+    setLocation,
   };
 
   return (
