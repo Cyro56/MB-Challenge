@@ -4,7 +4,6 @@ export const Container = styled.View`
   flex: 1;
   background-color: #fff;
   padding: 20px;
-  margin-bottom: 50px;
 `;
 
 export const Title = styled.Text`
@@ -40,6 +39,7 @@ export const SubmitButton = styled.TouchableOpacity`
   padding: 10px;
   border-radius: 5px;
   align-items: center;
+  margin-bottom: 100px;
 `;
 
 export const SubmitButtonText = styled.Text`

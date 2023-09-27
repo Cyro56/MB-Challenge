@@ -78,8 +78,8 @@ export const CreateEvent = () => {
   };
 
   return (
-    <ScrollView>
-      <Container>
+    <Container>
+      <ScrollView>
         <Title>Criar Evento</Title>
         <Formik
           initialValues={initialValues}
@@ -148,8 +148,8 @@ export const CreateEvent = () => {
             </View>
           )}
         </Formik>
-      </Container>
+      </ScrollView>
       <Footer />
-    </ScrollView>
+    </Container>
   );
 };
