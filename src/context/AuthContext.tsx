@@ -21,7 +21,7 @@ export const AuthContext = createContext<IAuth>({
 });
 
 function AuthProvider({children}: {children: React.ReactNode}) {
-  const [isAuthenticated, setIsAuthenticated] = useState(true);
+  const [isAuthenticated, setIsAuthenticated] = useState(false);
   const [userEmail, setUserEmail] = useState<string>('');
   const [searchText, setSearchText] = useState<string>('');
   const [location, setLocation] = useState<string>('');

@@ -58,6 +58,12 @@
     "setupFilesAfterEnv": [
       "@testing-library/jest-native/extend-expect"
     ],
+    "moduleNameMapper": {
+      "react-native-geolocation-service": "<rootDir>/mocks/empty.js",
+      "react-native-permissions": "<rootDir>/mocks/empty.js",
+      "react-native-calendars": "<rootDir>/mocks/empty.js",
+      "react-native-toast-message": "<rootDir>/mocks/empty.js"
+    },
     "moduleFileExtensions": [
       "ts",
       "tsx",
